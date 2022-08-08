@@ -21,6 +21,6 @@
 int main() {
   int c, res;
 
-  res = ((c = getchar() != EOF));
+  res = ((c = getchar()) != EOF);
   printf("res = %d\n", res);
 }
