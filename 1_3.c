@@ -3,7 +3,7 @@
 /*================================================================================*/
 /*  Tittle: 1.3                                                                   */
 /*  Start_time: 08.08.2022 16:19                                                  */
-/*  End_time:                                                                     */
+/*  End_time: 08.08.2022 16:38                                                    */
 /*  Note:                                                                         */
 /*================================================================================*/
 
@@ -20,4 +20,19 @@
 #include <stdio.h>
 
 int main() {
+  float fahr, celsius;
+  int lower, upper, step;
+
+  lower = 0;
+  upper = 300;
+  step = 20;
+
+  fahr = lower;
+  printf("| F |  | Cels |\n");
+  printf("|---|--|------|\n");
+  while (fahr <= upper) {
+    celsius = (5.0 / 9.0) * (fahr - 32.0);
+    printf("|%3.0f|->|%6.1f|\n", fahr, celsius);
+    fahr = fahr + step;
+  }
 }
