@@ -22,5 +22,5 @@ int main() {
   int c, res;
 
   res = ((c = getchar()) != EOF);
-  printf("res = %d\n", res);
+  printf("Result =  %d\n", res);
 }
