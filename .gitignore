@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Some files
+file.pdf
+file.ps
+working_file.c
+
