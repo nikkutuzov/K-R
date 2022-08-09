@@ -3,7 +3,7 @@
 /*================================================================================*/
 /*  Tittle: Ex. 1.12                                                              */
 /*  Start_time: 09.08.2022 18:50                                                  */
-/*  End_time:                                                                     */
+/*  End_time: 09.08.2022 19:06                                                    */
 /*  Note:                                                                         */
 /*================================================================================*/
 
@@ -18,5 +18,22 @@
 
 #include <stdio.h>
 
+#define IN 1
+#define OUT 0
+
 int main() {
+  int c, state;
+
+  state = OUT;
+  while ((c = getchar()) != EOF) {
+    if (c == ' ' || c == '\t' || c == '\n') {
+      if (state == IN) {
+        printf("\n");
+        state = OUT;
+      }
+    } else {
+      state = IN;
+      putchar(c);
+    }
+  }
 }
