@@ -16,7 +16,7 @@
  *
  * В российском издании перевод так себе, в английском:
  *
- * Revise the main routine of the longest-line program so it will correctly print 
+ * Revise the main routine of the longest-line program so it will correctly print
  * the length of arbitrarily long input lines, and as much as possible of the text.
  *
  * Я бы перевел примерно так:
@@ -29,13 +29,15 @@
  *
  * Вот по моему вольному переводу и будем делать.
  *
+ * Вот решение по поводу правильного вывода длины строки, а вот чтобы напечатать
+ * как можно больше символов...
+ *
  */
 
 /*<=====================================CODE=====================================>*/
 
 #include <stdio.h>
 
-// оригинальные строки буду комментировать
 //#define MAXLINE 1000
 #define MAXLINE 10 // для простоты тестирования укоротим строку
 
@@ -48,8 +50,19 @@ int main() {
   char line[MAXLINE];
   char longest[MAXLINE];
 
+  // создадим вспомогательную переменную
+  int c;
+
   max = 0;
   while ((len = Getline(line, MAXLINE)) > 0) {
+
+    // добавим: пока не будет конец строки и не конец файла
+    // мы так и будем увеличивать длину строки
+    while ((c = getchar()) != EOF && c != '\n') {
+      len++;
+    }
+    // конец того, что добавили
+
     if (len > max) {
       max = len;
       copy(longest, line);
